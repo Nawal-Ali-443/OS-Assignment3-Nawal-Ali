@@ -38,6 +38,8 @@ class SharedResources {
     // Binary semaphore for CPU access control
     public static final Semaphore cpuSemaphore = new Semaphore(1);
     
+    
+    
     public static int contextSwitchCount = 0;
     public static int completedProcessCount = 0;
     public static long totalWaitingTime = 0;
