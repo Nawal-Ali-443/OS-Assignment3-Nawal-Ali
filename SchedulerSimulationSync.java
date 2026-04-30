@@ -56,6 +56,16 @@ class SharedResources {
         // RACE CONDITION: Multiple threads might read and write simultaneously!
         contextSwitchCount++;
     }
+     // Method to increment completed process counter
+    public static void incrementCompletedProcess() {
+        completedProcessLock.lock();
+        try {
+            completedProcessCount++;
+        } finally {
+            completedProcessLock.unlock();
+        }
+    }
+
     
     // Method to increment completed process counter
     public static void incrementCompletedProcess() {
