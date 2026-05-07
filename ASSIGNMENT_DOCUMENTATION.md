@@ -348,7 +348,7 @@ mess. Thatʼs exactly what synchronisation does for shared data in a program.”
 
 ## Part 6: GitHub Repository Information
 
-**Repository URL**(https://github.com/Nawal-Ali-443/OS-Assignment3-Nawal-Ali/edit/main/ASSIGNMENT_DOCUMENTATION.md)
+**Repository URL**(https://github.com/Nawal-Ali-443/OS-Assignment3-Nawal-Ali.git)
 
 
 **Number of commits**: 6 (all meaningful, spread over 5 days)
