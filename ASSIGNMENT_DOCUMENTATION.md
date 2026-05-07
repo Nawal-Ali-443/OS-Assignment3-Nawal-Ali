@@ -84,7 +84,7 @@ se the counters are independent.
 
 **Testing approach**: Set Semaphore(2) temporarily to see concurrency effects; then reverte d to 1
 
-**Time spent**: 25 min
+**Time spent**:     25 min
 ---
 
 ### Entry 5 - Task 3  [30/4/2026, 10:9]
