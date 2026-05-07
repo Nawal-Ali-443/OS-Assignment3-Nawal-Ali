@@ -191,7 +191,8 @@ without locks, updates can be lost.
 
 **Synchronization mechanism used**: Mechanism: Three separate `ReentrantLock`s (fine-grained)
 
-**Code snippet**:
+**Code snippet
+
 public static void incrementContextSwitch() {
 contextSwitchLock.lock();
 try { contextSwitchCount++; } finally { contextSwitchLock.unlock();}
@@ -203,7 +204,8 @@ try { contextSwitchCount++; } finally { contextSwitchLock.unlock();}
 corruption or exceptions
 **Synchronization mechanism used**: ReentrantLock
 
-**Code snippet**:
+**Code snippet
+
 ```java
 public static void logExecution(String message) {
 logLock.lock();
@@ -215,11 +217,12 @@ try { executionLog.add(message); } finally { logLock.unlock(); }
 
 **Purpose of semaphore**: Simulate a single‑core CPU – only one process can execute at a time.
 
-**Number of permits and why**:1 ,there is only one there is only one thread counld access cpu at the same time
+**Number of permits and why**:1 (binary semaphore)
 
 **Where implemented**: Process.run() and Process.runToCompletion()
 
-**Code snippet**:
+**Code snippet
+
 ```java
 SharedResources.cpuSemaphore.acquire();
 try {
@@ -231,6 +234,10 @@ SharedResources.cpuSemaphore.release();}
  Guarantees that even though many threads are ready, only one proceeds into
 the CPU at any moment – exactly like a real uniprocessor system.
 ---
+
+
+
+
 
 ## Part 4: Testing and Verification (2 marks)
 
