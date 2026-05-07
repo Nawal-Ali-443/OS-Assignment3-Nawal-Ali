@@ -121,6 +121,7 @@ class Process implements Runnable {
                 }
                 
                 SharedResources.incrementContextSwitch();
+
                 
                 int runTime = Math.min(timeQuantum, remainingTime);
                 
