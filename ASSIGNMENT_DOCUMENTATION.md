@@ -196,6 +196,10 @@ without locks, updates can be lost.
 public static void incrementContextSwitch() {
 contextSwitchLock.lock();
 try { contextSwitchCount++; } finally { contextSwitchLock.unlock();}
+
+Justification: Each counter is independent, so separate locks maximise concurrency.
+
+
 ### Critical Section #2: Execution Log
 
 **What resource**: Resource: List<String> executionLog
@@ -210,6 +214,9 @@ corruption or exceptions
 public static void logExecution(String message) {
 logLock.lock();
 try { executionLog.add(message); } finally { logLock.unlock(); }
+
+
+Justification: Exclusive access is required to preserve the logʼs integrity.
 
 ---
 
@@ -259,9 +266,7 @@ Average waiting time: identical each run**:
 
 **Why synchronization is necessary**: 
 (Explain what race conditions COULD occur without synchronization, even if you didn't observe them. Explain which shared resources need protection and why.)
-Without locks, the counters could lose increments
-and the log could throw exceptions. The fact that results are now deterministic proves
-race conditions are eliminated.
+
 **Without locks, the counters could lose increments
 and the log could throw exceptions. The fact that results are now deterministic proves
 race conditions are eliminated.**:
