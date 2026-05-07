@@ -73,9 +73,7 @@ se the counters are independent.
 **How I solved it**:  Corrected to lock/unlock inside try-finally.
 **Testing approach**:Added heavy logging; never saw ConcurrentModificationException.
 
-**Time spent**: 30 min
-
----
+**Time spent**: 35 min
 
 ### Entry 4 - [30/4/2026, 10:9]
 **What I implemented**: Task 3 – Semaphore for CPU control (binary semaphore with 1 permit).
