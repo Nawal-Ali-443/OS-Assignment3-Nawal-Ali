@@ -131,7 +131,6 @@ Incorrect behaviour: Program may crash or log entries may disappear.]
 ### Question 2: Locks vs Semaphores
 **Q**: Explain the difference between ReentrantLock and Semaphore. Where did you use each in your code and why?
 
-**Your Answer**:
 ReentrantLock is a mutual exclusion lock (binary). It guarantees that only one thre
 ad holds the lock at a time. I used it for the counters and the log because those resourc
 es require exclusive access.
@@ -143,7 +142,7 @@ tly matching a single-core CPU.
 ### Question 3: Deadlock Prevention
 **Q**: What is deadlock? Explain TWO prevention techniques and what you did to prevent deadlocks in your code.
 
-**Your Answer**:
+
 - Deadlock occurs when two or more threads wait forever for each other’s locked resou
 rces.
 - Prevention techniques I used:
@@ -152,7 +151,7 @@ not happen.
 2. try-finally blocks – Every lock() or acquire() is followed by a finally blocks  that releases the resource. This guarantees release even if an exception ,enting resource leaks.
 - Additionally, the semaphore is acquired at the very beginning of the critical section and released immediately after, so there is no nested locking.
 
-[Your answer here - reference try-finally blocks, lock ordering, etc.]
+
 
 ---
 
@@ -178,7 +177,6 @@ oughput.
 - Because the counters are independent, fine-grained locking provides **better concurrenc
 y** – it exactly follows the principle: protect each shared resource with its own lock.**:
 
-[Your answer here - explain coarse-grained vs fine-grained locking, independence of counters, concurrency implications. Show understanding of when to use each approach. 5-8 sentences expected.]
 
 ---
 
@@ -196,14 +194,7 @@ without locks, updates can be lost.
 **Code snippet**:
 public static void incrementContextSwitch() {
 contextSwitchLock.lock();
-try { contextSwitchCount++; } finally { contextSwitchLock.unlock(); }
-// Paste your implementation here
-```
-
-
-
----
-
+try { contextSwitchCount++; } finally { contextSwitchLock.unlock();}
 ### Critical Section #2: Execution Log
 
 **What resource**: Resource: List<String> executionLog
@@ -252,12 +243,12 @@ Ran java SchedulerSimulationSync five times.
 # Commands used (run the program at least 5 times)
 ```
 
-**Results**: 
-Results: Every run produced the exact same numbers: Context switches: always 28
+**Procedure: Ran java SchedulerSimulationSync five times.
+Results: Every run produced the exact same numbers:
+Context switches: always 28
 Completed processes: always 12 (matches process count)
 Total waiting time: always 30641 ms (example)
-Average waiting time: identical each run
-(Show that running multiple times produces consistent, correct results)
+Average waiting time: identical each run**: 
 
 **Why synchronization is necessary**: 
 (Explain what race conditions COULD occur without synchronization, even if you didn't observe them. Explain which shared resources need protection and why.)
@@ -266,7 +257,8 @@ and the log could throw exceptions. The fact that results are now deterministic 
 race conditions are eliminated.
 **Without locks, the counters could lose increments
 and the log could throw exceptions. The fact that results are now deterministic proves
-race conditions are eliminated.**: 
+race conditions are eliminated.**:
+
 
 ---
 
@@ -307,45 +299,7 @@ conditions because counters remained protected.
 concurrency without changing the core logic.
 
 ---
-Part 4: Testing and Verification (2 marks)
-Test 1: Consistency Check
-What I tested: Running program multiple times to verify consistent results
 
-Testing procedure:
-
-# Commands used (run the program at least 5 times)
-Results: (Show that running multiple times produces consistent, correct results)
-
-Why synchronization is necessary: (Explain what race conditions COULD occur without synchronization, even if you didn't observe them. Explain which shared resources need protection and why.)
-
-Conclusion:
-
-Test 2: Exception Testing
-What I tested: Checking for ConcurrentModificationException
-
-Testing procedure:
-
-Results:
-
-What this proves:
-
-Test 3: Correctness Verification
-What I tested: Verifying correct final values (total burst time, context switches, etc.)
-
-Expected values:
-
-Actual values:
-
-Analysis:
-
-Test 4: Different Scenarios
-Scenario tested: [e.g., different time quantum, more processes, etc.]
-
-Purpose:
-
-Results:
-
-What I learned:
 
 
 
