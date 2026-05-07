@@ -386,7 +386,7 @@ After you replace the student ID and video link, make the following commits **ov
 l days**:
 | 1 | Set my student ID: YOUR_ID | SchedulerSimulationSync.java |
 | 2 | Task 1 (YOUR_ID): Added fine-grained ReentrantLock for counters | same file
-| 3 | Task 2 (YOUR_ID): Added ReentrantLock for execution log | same file |
+| 3 | Task 2 (YOUR_ID): Added ReentrantLock for execution log | same file | 
 | 4 | Task 3 (YOUR_ID): Implemented Semaphore for CPU control | same file |
 | 5 | Task 4 (YOUR_ID): Completed documentation | ASSIGNMENT_DOCUMENTATION.md |
 | 6 (optional) | Final cleanup and verification | both files |
