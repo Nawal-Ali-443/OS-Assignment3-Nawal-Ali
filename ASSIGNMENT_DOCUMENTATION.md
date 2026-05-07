@@ -294,6 +294,47 @@ conditions because counters remained protected.
 concurrency without changing the core logic.
 
 ---
+Part 4: Testing and Verification (2 marks)
+Test 1: Consistency Check
+What I tested: Running program multiple times to verify consistent results
+
+Testing procedure:
+
+# Commands used (run the program at least 5 times)
+Results: (Show that running multiple times produces consistent, correct results)
+
+Why synchronization is necessary: (Explain what race conditions COULD occur without synchronization, even if you didn't observe them. Explain which shared resources need protection and why.)
+
+Conclusion:
+
+Test 2: Exception Testing
+What I tested: Checking for ConcurrentModificationException
+
+Testing procedure:
+
+Results:
+
+What this proves:
+
+Test 3: Correctness Verification
+What I tested: Verifying correct final values (total burst time, context switches, etc.)
+
+Expected values:
+
+Actual values:
+
+Analysis:
+
+Test 4: Different Scenarios
+Scenario tested: [e.g., different time quantum, more processes, etc.]
+
+Purpose:
+
+Results:
+
+What I learned:
+
+
 
 ## Part 5: Reflection and Learning
 
